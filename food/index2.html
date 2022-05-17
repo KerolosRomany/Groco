@@ -22,6 +22,21 @@
     <header class="header">
 
         <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#products">products</a>
+            <div class="dropdown">
+                <a onclick="myFunction()" class="dropbtn">categories</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Vegitables</a>
+                    <a href="#">Fresh Fruits</a>
+                    <a href="#">Dairy Products</a>
+                    <a href="#">Fresh Meat</a>
+                </div>
+            </div>
+            <a href="review.html">review</a>
+            <a href="blogs.html">blogs</a>
+        </nav>
 
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
@@ -67,12 +82,11 @@
             <a href="#" class="btn">checkout</a>
         </div>
         <form action="" class="login-form">
-            <h3>login now</h3>
-            <input type="email" placeholder="your email" class="box">
-            <input type="password" placeholder="your password" class="box">
-            <p>forget your password <a href="../Registeration/ForgotPass.html">click here</a></p>
-            <p>don't have an account <a href="../Registeration/signup.html">Register</a></p>
-            <input type="submit" value="login now" class="btn">
+            <h3>User</h3>
+
+            <p>Update Profile <a href="../user_profile/user.html">click here</a></p>
+            <p><a href="../food/indexx.html">Sign Out</a></p>
+
         </form>
 
 
@@ -646,7 +660,13 @@
                 <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Cairo, Egypt - 400104 </a>
             </div>
 
-
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="index2.html" class="links"> <i class="fas fa-arrow-right"></i> home </a>
+                <a href="index2.html" class="links"> <i class="fas fa-arrow-right"></i> products </a>
+                <a href="review.html" class="links"> <i class="fas fa-arrow-right"></i> review </a>
+                <a href="blogs.html" class="links"> <i class="fas fa-arrow-right"></i> blogs </a>
+            </div>
 
             <div class="box">
                 <h3>newsletter</h3>
@@ -665,5 +685,5 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 
-    <script src="main2.js"></script>
+    <script src="main.js"></script>
 </body>
