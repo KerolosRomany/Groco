@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link rel="stylesheet" href="{% static "product/style.css" %}">
 
 </head>
 
@@ -100,7 +100,7 @@
         <div class="content">
             <h3>fresh and <span>organic</span> products for your</h3>
             <p>Please note that this is a pain relief. It's Time for Our Freedom I'm Coming To Make The Season Except.</p>
-            <a href="#products" class="btn">shop now</a>
+            <a href="{% url "all_products" %}" class="btn">shop now</a>
         </div>
 
     </section>
