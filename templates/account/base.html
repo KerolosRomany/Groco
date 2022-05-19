@@ -19,7 +19,7 @@
 <body>
 {% block body %}
 
-    {% if messages %}
+    {% comment %}{% if messages %}
         <div>
             <strong>Messages:</strong>
             <ul>
@@ -28,7 +28,7 @@
                 {% endfor %}
             </ul>
         </div>
-    {% endif %}
+    {% endif %}{% endcomment %}
 
     {% block content %}
     {% endblock %}

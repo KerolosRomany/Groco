@@ -21,18 +21,17 @@ body {
     position: relative;
     max-width: 430px;
     width: 100%;
-    max-height: 800px;
-    height: 100%;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    /*overflow: hidden;*/
+    overflow: hidden;
     margin: 0 20px;
 }
 
 .container .forms {
     display: flex;
     align-items: center;
+    height: 440px;
     width: 200%;
     transition: height 0.2s ease;
 }
@@ -44,7 +43,7 @@ body {
     transition: margin-left 0.18s ease;
 }
 
-.container .login {
+.container.active .login {
     margin-left: -50%;
     opacity: 0;
     transition: margin-left 0.18s ease, opacity 0.15s ease;
@@ -55,12 +54,12 @@ body {
     transition: opacity 0.09s ease;
 }
 
-.container .signup {
+.container.active .signup {
     opacity: 1;
     transition: opacity 0.2s ease;
 }
 
-.container .forms {
+.container.active .forms {
     height: 600px;
 }
 
@@ -128,23 +127,6 @@ body {
     right: 0;
     cursor: pointer;
     padding: 10px;
-}
-
-.form .checkbox-text {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.checkbox-text .checkbox-content {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-content input {
-    margin: 0 8px -2px 4px;
-    accent-color: #ff7800;
 }
 
 .form .text {

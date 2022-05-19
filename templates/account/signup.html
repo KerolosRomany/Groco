@@ -55,10 +55,10 @@
                     </div>
                 </form>
                 <div class="login-signup">
-                    <p>{% blocktrans %}Already have an account? <a href="{{ login_url }}">Sign In</a>
-                        .{% endblocktrans %}</p>
+                    <p>Already have an account? <a href="{{ login_url }}">Sign In</a>
+                        .</p>
                     <span class="text">Back To
-                        <a href="#" class="text login-link">Home Page</a>
+                        <a href="{% url "landing" %}" class="text login-link">Home Page</a>
                     </span>
                 </div>
             </div>
