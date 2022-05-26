@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'userprofile',
     'order',
     'product',
+    'checkout',
     'Groco',
     'phone_field'
 ]
