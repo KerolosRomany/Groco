@@ -17,6 +17,8 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+
+
 @receiver(post_save, sender=get_user_model())
 def create_profile(instance, created, *args, **kwargs):
     if created:

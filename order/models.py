@@ -22,16 +22,20 @@ class Order(models.Model):
         return self.email
 
 
+
+
 class OrderLine(models.Model):
     order = models.ForeignKey(
         Order,
+        null=True,
         on_delete=models.CASCADE,
         editable=False
     )
     product = models.ForeignKey(
         'product.Product',
         on_delete=models.SET_NULL,
-        blank=True
+        blank=True,
+        null=True
     )
     product_name = models.CharField(max_length=225)
     product_price = models.FloatField()

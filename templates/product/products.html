@@ -1,26 +1,14 @@
-<!DOCTYPE html>
+{% extends "account/base.html" %}
 {% load static %}
 {% load account %}
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Responsive Grocery Website Design Tutorial</title>
-
+{% block title %}Products{% endblock %}
+    {% block head %}
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{% static "product/style2.css" %}">
-
-</head>
-
-
-<body>
-
-    <!-- header section starts  -->
-
+    {% endblock head %}
+    {% block content %}
     <header class="header">
 
         <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
@@ -684,9 +672,7 @@
         <div class="credit"> created by <span> FCAI STUDENTS</span> | all rights reserved </div>
 
     </section>
-
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-
     <script src="{% static "js/main.js" %}"></script>
-</body>
+
+    {% endblock content %}

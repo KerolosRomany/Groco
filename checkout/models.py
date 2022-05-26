@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 from django.contrib.auth import get_user_model
 
 # Create your models here.
@@ -13,7 +14,7 @@ class Checkout(models.Model):
     email = models.EmailField()
     token = models.UUIDField(
         primary_key=True,
-        default=uuid4,
+        default=uuid.uuid4,
         editable=False
     )
     note = models.TextField()
@@ -33,3 +34,6 @@ class CheckoutLine(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+        
