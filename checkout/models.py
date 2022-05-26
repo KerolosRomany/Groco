@@ -34,3 +34,6 @@ class CheckoutLine(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+        

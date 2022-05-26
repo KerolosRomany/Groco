@@ -22,6 +22,8 @@ class Order(models.Model):
         return self.email
 
 
+
+
 class OrderLine(models.Model):
     order = models.ForeignKey(
         Order,

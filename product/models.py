@@ -45,6 +45,8 @@ class Product(models.Model):
         return self.name
 
 
+
+
 class ProductImage(models.Model):
     image = models.ImageField()
     product = models.ForeignKey('Product',on_delete=models.CASCADE)
