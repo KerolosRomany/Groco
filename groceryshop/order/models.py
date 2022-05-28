@@ -32,7 +32,7 @@ class OrderLine(models.Model):
         editable=False
     )
     product = models.ForeignKey(
-        'product.Product',
+        'groceryshop.product.Product',
         on_delete=models.SET_NULL,
         blank=True,
         null=True

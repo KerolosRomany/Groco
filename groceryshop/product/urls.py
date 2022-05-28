@@ -1,6 +1,6 @@
 from django.urls import path
 
-from product import views
+from groceryshop.product import views
 
 urlpatterns = [
     path('', views.landing, name="landing"),

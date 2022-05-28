@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'userprofile',
     'order',
     'product',
-    'checkout',
-    'Groco',
+    'groceryshop.checkout',
+    'groceryshop',
     'phone_field'
 ]
 
@@ -64,7 +64,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(BASE_DIR, '../../templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Groco.wsgi.application'
+WSGI_APPLICATION = 'groceryshop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
