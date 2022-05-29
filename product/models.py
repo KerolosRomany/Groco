@@ -32,6 +32,9 @@ class Brand(models.Model):
     slug = models.SlugField(max_length=225)
     image = models.ImageField()
 
+    def get_absolute_url(self):
+        return reverse_lazy("dashboard:brand_dashboard:create_brand")
+
 class Product(models.Model):
     name = models.CharField(max_length=225)
     description = models.TextField()
@@ -43,6 +46,9 @@ class Product(models.Model):
     rate =models.Avg()
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse_lazy('dashboard:product_dashboard:product_update')
 
 
 

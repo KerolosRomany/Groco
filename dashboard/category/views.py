@@ -8,7 +8,7 @@ from product.models import Category
 
 class CreateCategory(CreateView):
     model = Category
-    template_name = './product/landing.html'
+    template_name = './category/create.html'
     fields = ["name","descriptions","background_image"]
 
     def form_valid(self, form):
@@ -19,7 +19,7 @@ class CreateCategory(CreateView):
 
 class CreateSubCategory(CreateView):
     model = Category
-    template_name = './product/landing.html'
+    template_name = './category/create.html'
     fields = ["name","descriptions","background_image"]
 
     def form_valid(self, form):
