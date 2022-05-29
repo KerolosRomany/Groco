@@ -25,12 +25,12 @@ class Category(MPTTModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse_lazy()
+        return reverse_lazy("dashboard:category_dashboard:category_list")
 
 class Brand(models.Model):
-    name = models.CharField(max_length=225) 
+    name = models.CharField(max_length=225)
     slug = models.SlugField(max_length=225)
-    image = models.ImageField() 
+    image = models.ImageField()
 
 class Product(models.Model):
     name = models.CharField(max_length=225)
