@@ -78,8 +78,8 @@
         </div>
         {% if user.is_authenticated %}
             <form action="" class="login-form">
-            <h3>{% user_display user %}</h3>
-            <p>Update Profile <a href="#">click here</a></p>
+            <h3>{{ user.email }}</h3>
+            <p>Update Profile <a href="{% url "update_profile" %}">click here</a></p>
             <p><a href="{% url "account_logout" %}">Sign Out</a></p>
         </form>
         {% else %}
