@@ -1,10 +1,12 @@
 from django.urls import path
 from . import views
+from dashboard.decorators import permession
+
 
 app_name='brand_dashboard'
 
-urlpatterns =[
-    path('create/', views.CreateBrand.as_view(), name = 'craete_brand'),
-    path('update/<int:pk>/', views.UpdateView.as_view(), name = 'update_brand'),
-    path('list/', views.ListBrand.as_view(), name = 'list_brand'),
+urlpatterns = [
+    path('create/', permession(views.CreateBrand.as_view()), name = 'craete_brand'),
+    path('update/<int:pk>/', permession(views.UpdateView.as_view()), name = 'update_brand'),
+    path('list/', permession(views.ListBrand.as_view()), name = 'list_brand'),
 ]

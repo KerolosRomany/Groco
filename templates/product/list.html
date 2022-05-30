@@ -2,8 +2,9 @@
 
 {% block content %}
     {% for object in object_list %}
-        <a href="{% url 'dashboard:product_dashboard:product_update' pk = object.pk %}">
-            {{ object.name }}
+        <a href="{% url 'product:detail_product' slug = object.slug %}">
+           <h5>{{ object.name }}</h5>
+           <p>{{ object.sku }} | {{ object.price }}</p>
         </a>
     {% endfor %}
 {% endblock %}
