@@ -209,7 +209,7 @@ section {
 
 .header .shopping-cart .box .content h3 {
     color: var(--black);
-    font-size: 1.7rem;
+    /*font-size: 1.7rem;*/
     padding-bottom: 1rem;
 }
 
@@ -253,7 +253,8 @@ section {
 }
 
 .header .login-form h3 {
-    font-size: 2.5rem;
+    /*font-size: 2.5rem;*/
+    font-size: 1.5rem;
     text-transform: uppercase;
     color: var(--black);
 }

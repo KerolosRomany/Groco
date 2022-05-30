@@ -9,14 +9,13 @@ from phone_field import PhoneField
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
+    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, related_name='profile')
     address = models.CharField(max_length=450, blank=True)
     mobile = PhoneField(blank=True, help_text='Enter mobile number')
+    avatar = models.ImageField(upload_to='profile_images/', blank=True)
 
     def __str__(self):
         return self.user.username
-
-
 
 
 @receiver(post_save, sender=get_user_model())
