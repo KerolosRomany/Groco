@@ -90,7 +90,15 @@
 <br>
     {% block content %}
     {% endblock %}
-
+{% block js %}
+    <script src ="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+    <script>
+        Dropzone.autoDiscover = false;
+        $(function(){
+            var myDropzone = new Dropzone (".dropzone",{paramName: "image",});
+        })
+    </script>
+{% endblock %}
 </div>
 
     <section class="footer">

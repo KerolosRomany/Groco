@@ -1,0 +1,18 @@
+{% extends 'dashboard/base.html' %}
+
+{% block dashcontent %}
+    <form action="{% url 'dashboard:product_dashboard:create_image'pk=product_id %}" class=" dropzone"
+          enctype="multipart/form-data"
+          method="post">
+        {%csrf_token %}
+        {{ form.as_p }}
+        <button> upload </button>
+    </form>
+    {% for object in object_list %}
+        <img src = "{{object.image.url}}" alt ="{{object.alt}}">
+    {% endfor %}
+{% endblocks dashcontent %}
+
+{% block js %}
+    <script src ="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+{% endblock %}

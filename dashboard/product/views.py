@@ -1,6 +1,9 @@
 from django.views.generic import CreateView, UpdateView, ListView
-from product.models import Product
+from product.models import Product, ProductImage
 from django.utils.text import slugify
+from django.shortcuts import get_object_or_404
+from .forms import ProductImageForm
+from django.http import JsonResponse
 
 
 class CreateProduct(CreateView):
@@ -30,4 +33,29 @@ class UpdateProduct(UpdateView):
 class ListProduct(ListView):
     model = Product
     template_name = "./dashboard/product/list.html"
-    fields = ['name', 'image']
+
+
+class ProductImageList(ListView):
+    model = ProductImage
+    template_name = 'dashboard/product/List_images.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ProductImageList, self).get_context_data(**kwargs)
+        context['form'] = ProductImageForm()
+        context['product_id'] = self.kwargs.get('pk')
+        return context
+
+    def get_queryset(self):
+        return super(ProductImageList, self).get_queryset().filter(product_id=self.kwargs.get('pk'))
+
+
+def create_image(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    form = ProductImageForm(request.POST, request.FILES)
+    if form.is_valid():
+        obj = form.save(commit=False)
+        obj.product = product
+        obj.alt = product.name
+        obj.save()
+        return JsonResponse({'message': 'product image succesfuly created'}, status=200)
+    return JsonResponse({'message': form.errors}, status=400)

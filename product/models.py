@@ -58,6 +58,8 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse_lazy('dashboard:product_dashboard:product_list')
 
+    def get_thumbnail(self):
+        return self.productimage_set
 
 class ProductImage(models.Model):
     image = models.ImageField()

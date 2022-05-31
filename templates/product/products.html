@@ -12,7 +12,7 @@
     <header class="header">
         <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> groco </a>
         <nav class="navbar">
-            <a href="{% url "landing" %}">home</a>
+            <a href="{% url 'product:landing' %}">home</a>
             <a href="#products">products</a>
             <div class="dropdown">
                 <a onclick="myFunction()" class="dropbtn">categories</a>
@@ -647,10 +647,10 @@
 
             <div class="box">
                 <h3>quick links</h3>
-                <a href="{% url "landing" %}" class="links"> <i class="fas fa-arrow-right"></i> home </a>
-                <a href="{% url "all_products" %}" class="links"> <i class="fas fa-arrow-right"></i> products </a>
-                <a href="{% url "landing" %}#review" class="links"> <i class="fas fa-arrow-right"></i> review </a>
-                <a href="{% url "landing" %}#blogs" class="links"> <i class="fas fa-arrow-right"></i> blogs </a>
+                <a href="{% url 'product:landing' %}" class="links"> <i class="fas fa-arrow-right"></i> home </a>
+                <a href="{% url 'product:all_products' %}" class="links"> <i class="fas fa-arrow-right"></i> products </a>
+                <a href="{% url 'product:landing' %}#review" class="links"> <i class="fas fa-arrow-right"></i> review </a>
+                <a href="{% url 'product:landing' %}#blogs" class="links"> <i class="fas fa-arrow-right"></i> blogs </a>
             </div>
 
             <div class="box">
