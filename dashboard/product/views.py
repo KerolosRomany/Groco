@@ -6,6 +6,7 @@ from .forms import ProductImageForm
 from django.http import JsonResponse
 
 
+
 class CreateProduct(CreateView):
     model = Product
     template_name = "./dashboard/product/create.html"
@@ -57,5 +58,13 @@ def create_image(request, pk):
         obj.product = product
         obj.alt = product.name
         obj.save()
-        return JsonResponse({'message': 'product image succesfuly created'}, status=200)
+        return JsonResponse({'message': 'product image successfully created'}, status=200)
     return JsonResponse({'message': form.errors}, status=400)
+
+
+def delete_image(request,pk):
+    Image = get_object_or_404(ProductImage, pk = pk)
+    if Image:
+        Image.delete()
+        return JsonResponse({'message':'the image has been deleted successfully'}, status=200)
+    return JsonResponse({'message': 'this product image instance does not exist'}, status=400)

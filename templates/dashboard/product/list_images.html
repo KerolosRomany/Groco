@@ -8,11 +8,63 @@
         {{ form.as_p }}
         <button> upload </button>
     </form>
-    {% for object in object_list %}
-        <img src = "{{object.image.url}}" alt ="{{object.alt}}">
-    {% endfor %}
+    <div id ="productimage">
+        <div class ="row>">
+            {% for object in object_list %}
+                <div class="col-md-4">
+                <img src = "{{object.image.url}}" alt ="{{object.alt}}">
+                <button  data-delete-url="{% url 'dashboard:product_dashboard:delete_image' pk = object.pk %}"   type="button" class="btn btn-primary delete-modal" data-toggle ="model" data-target = "#exampleModel">
+                Delete
+                </button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Image</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this image?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a id ="delete_button" href ="" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblocks dashcontent %}
 
 {% block js %}
     <script src ="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+    <script>
+    Dropzone.autoDiscover = false;
+    $(function(){
+        let$deleteButton = $('#delete_button');
+        let myDropzone = new Dropzone (".dropzone",{
+                paramName: "image",
+        });
+    $('delete-modal').click(function (){
+        $deleteButton.attr('href',$(this).attr('data-delete-url'))
+    });
+    $deleteButton.click(function(e){
+        e.preventDefault();
+        let $this = $(this);
+        $.ajax({
+            url:$this.attr('href'),
+            data:'',
+            method:'POST',
+            success:function (){
+                $('#exampleModal').modal('hide')
+            }
+        })
+    });
+        })
+    </script>
 {% endblock %}

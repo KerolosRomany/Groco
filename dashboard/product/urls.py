@@ -10,5 +10,6 @@ urlpatterns = [
     path('list/', permession(views.ListProduct.as_view()), name='product_list'),
     path('<int:pk>/list/images/', permession(views.ProductImageList.as_view()), name='product_image_list'),
     path('<int:pk>/create/image/', permession(views.create_image), name='create_image'),
+    path('delete/image/<int:pk>', permession(views.delete_image), name='delete_image'),
 
 ]
