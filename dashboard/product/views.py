@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.views.generic import CreateView, UpdateView, ListView
 from product.models import Product, ProductImage
 from django.utils.text import slugify
@@ -58,7 +59,12 @@ def create_image(request, pk):
         obj.product = product
         obj.alt = product.name
         obj.save()
-        return JsonResponse({'message': 'product image successfully created'}, status=200)
+        return JsonResponse({'message': 'product image successfully created','alt':obj.alt,
+                             'url': obj.image.url,
+                             'delete_url': reverse('dashboard:product_dashboard:delete_image',kwargs ={
+                                 'pk': obj.pk
+                             })},
+                            status = 200 )
     return JsonResponse({'message': form.errors}, status=400)
 
 
